@@ -29,9 +29,11 @@ test:
 
 Notes
 
+- `docker-compose up -d` to run in detached mode
 - `docker-compose run rails g model Something`
 - `docker-compose run rails db:migrate`
 
+- `docker-compose up --build` when changing config/dependencies
 - `rm tmp/pids/server.pid` if server is running when trying to start
 
 
