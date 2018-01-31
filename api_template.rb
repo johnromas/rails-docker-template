@@ -17,6 +17,12 @@ end
 
 # rails_command "db:migrate"
 
+application "
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.log_tags  = [:subdomain, :uuid]
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
+"
 environment "config.active_job.queue_adapter = :delayed_job"
 environment "
     config.middleware.use Rack::Cors do
